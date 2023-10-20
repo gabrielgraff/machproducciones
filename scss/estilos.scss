@@ -1,3 +1,13 @@
+// Variables
+@import "variables";
+
+// Aplicando Extend
+%center{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width:800px){  
     h3 {
     font-size: 15px;
@@ -11,7 +21,7 @@
 svg{
     width: 50px;
     height: 50px;
-    color: white;
+    color: $colortextos2;
 }
 
 .card{
@@ -19,50 +29,37 @@ svg{
 }
 
 h1{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    color:$colortextos1;
+    @extend %center;
 }
 
 h2{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    color:$colortextos1;
+    @extend %center;
 }
 
 h3{
-    color: white;
+    color: $colortextos2;
 }
 
 h4{
+    color:$colortextos1;
     font-size: 18px;
 }
 
 nav.link{
-    color: white;
-}
-
-.btn{
-    color: white;
-    background-color: black;
-    width: 100%;
-
-}
-
-.btn:hover{
-    background-color: gray;
-    transition: all 2s;
+    color: $colortextos2;
 }
 
 footer{
-    background-color: black;
+    background-color: $fondo1;
     width: 100%;
     height: 100px;
     display: flex;
 }
 
 .textofooter{
-    color: white;
+    color: $colortextos2;
     justify-content: center;
     align-items: center;
     justify-items: center;
@@ -75,10 +72,6 @@ footer{
 
 }
 
-main img{
-    width: 100%;
-}
-
 .redondear{
     border-radius: 50%;
 }
@@ -89,4 +82,20 @@ main img{
     border: 0;
 }
 
+// Aplicando Nesting
+main{ 
+    img{
+    width: 100%;
+    }
+}
 
+.btn{
+    color: $colortextos2;
+    background-color: $fondo1;
+    width: 100%;
+    &:hover{
+        background-color: $fondo2;
+        transition: all 1s;
+    }
+
+}
